@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODOLIST</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+
+    <script src="js/jquery-3.4.1.min.js"> </script>
+    <script src="js/jquery-ui.js"> </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $( function($) {
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date()
+            });
+        } );
+    </script>
+
+
+
+</head>
+<body>
+
+<div id="main">
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+           aria-controls="nav-home" aria-selected="true">
+           TodoList
+            <!--href="#"-->
+        </a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+           aria-controls="nav-profile" aria-selected="false">
+           Radio
+        </a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+           aria-controls="nav-contact" aria-selected="false">
+           Music
+        </a>
+
+        <span class="nName col-md-4 offset-md-5">Шульгович Виталий
+            <span id="Time"></span>
+        </span>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <a href="#main"></a>
+
+
+
+        <div id="myDIV" class="header">
+            <h2>Список моих дел</h2>
+            <input type="text" id="myInput" placeholder="Введите новое задание"  data-title="Введите дату выполнения">
+<!--            <input type="text" id="datepicker" placeholder="Введите дату выполнения" data-title="Введите дату выполнения">-->
+            <input type="text" id="datepicker" placeholder="Введите дату выполнения">
+            <span onclick="newElement()" class="allBtn">Добавить задачу</span>
+            <span onclick="saveElements()" class="allBtn saveBtn">Сохранить список дел</span>
+            <div style="clear:both"></div>
+
+
+            <div id="typeList">
+                    <fieldset>
+                        <label for="list">Выберите тип списка задач</label>
+                        <select  onchange="viewList()" name="list" id="list">
+                            <option value="1" selected="selected">все задачи</option>
+                            <option value="2">не выполненные</option>
+                            <option value="3">выполненные</option>
+                            <option value="4">неделя</option>
+                            <option value="5">месяц</option>
+                            <option id="selectArh" value="6">архив</option>
+                        </select>
+
+                    </fieldset>
+
+            </div>
+
+            <div type="button" id="viewCheck" class="viewBtn" >
+                <input type="checkbox" id='checkbox' onclick="changeFlag()">   <span>Скрыть выполненные</span>
+            </div>
+            <div type="button" id="viewBtn" class="viewBtn" onclick="delList()"><span>выполненные в архив</span></div>
+            <div type="button" id="viewBtnArh" class="viewBtn" onclick="showArh()"><span>показать архив</span></div>
+
+            <span onclick="deleteElements()" class="allBtn saveBtn delBtn">Очистить список дел</span>
+        </div>
+
+        <ul id="myUL">
+
+        </ul>
+
+
+        <div class="score">
+            Всего задач:
+            <div  id="score" class="inputScore"></div>
+        </div>
+        <div class="score">
+            Выполнено:
+            <div id="scoreCheck"  class="inputScore"></div>
+        </div>
+        <div class="score">
+            В работе:
+            <div id="scoreUnCheck"  class="inputScore"></div>
+        </div>
+        <div class="score">
+            В архиве:
+            <div id="scoreArh"  class="inputScore"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+    Здесь будет Radio!!!
+
+
+
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+       А тут музыка!
+
+
+
+    </div>
+</div>
+
+
+</div>
+<!--
+<div id="modal" class="modalView">
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+&lt;!&ndash;        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>&ndash;&gt;
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+-->
+
+
+
+
+
+
+<!--
+
+<a href="#main">Main</a>
+<a href="#about">About</a>
+<a href="#contacts">Contacts</a>
+<div id="main"></div>
+
+-->
+
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>-->
+<script src="js/jquery-3.3.1.slim.min.js"> </script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/js_todolist.js" type="text/javascript"></script>
+
+</body>
+</html>

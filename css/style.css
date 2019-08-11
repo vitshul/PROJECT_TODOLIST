@@ -1,0 +1,248 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    background:  linear-gradient(to bottom, lightgray 0%, whitesmoke 50%, darkgrey 100%);
+}
+
+/* Remove margins and padding from the list */
+ul {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+}
+
+.score{
+    float: left;
+    width: 120px;
+    height: 70px;
+    background: ghostwhite;
+    border-radius: 5px;
+    border: 1px solid mediumblue;
+    margin: 5px;
+    text-align: center;
+}
+.score:hover{
+    background: #ddd;
+}
+
+.inputScore{
+    height: 50px;
+    font-size: 20px;
+}
+
+.nav-tabs{
+    margin: 5px;
+}
+
+.nName{
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: .5rem 1rem;
+}
+#Time{
+    padding-left: 15px;
+    font-size: 18px;
+    font-style: oblique;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    border: solid 1px mediumblue;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li div.checked {
+   /* background: #888;*/
+    color: red;
+    text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li div.checked::before {
+    content: '';
+    position: absolute;
+    border-color: red;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Style the header */
+.header {
+    background-color: #4e555b;
+    padding: 30px 40px;
+    color: white;
+    text-align: left;
+}
+
+/* Clear floats after the header */
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the input */
+input {
+    margin: 3px;
+    border: solid 1px black;
+    border-radius: 0;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+#myInput {
+    width: 40%;
+}
+
+#datepicker{
+    width: 20%;
+}
+/*
+#datepicker:hover::after {
+    content: attr(data-title); !* Выводим текст *!
+!*    position: absolute; !* Абсолютное позиционирование *!
+    left: 20%; top: 30%; !* Положение подсказки *!*!
+    z-index: 1; !* Отображаем подсказку поверх других элементов *!
+    background: rgba(255,255,230,0.9); !* Полупрозрачный цвет фона *!
+    font-family: Arial, sans-serif; !* Гарнитура шрифта *!
+    font-size: 11px; !* Размер текста подсказки *!
+    padding: 5px 10px; !* Поля *!
+    border: 1px solid #333; !* Параметры рамки *!
+}*/
+
+
+/* Style the "Add" button */
+.allBtn {
+    padding: 10px;
+    width: 15%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    border: black solid 1px;
+}
+
+.allBtn:hover {
+    background-color: #bbb;
+}
+
+.saveBtn {
+    float: right;
+}
+
+.delBtn:hover{
+    color: red;
+}
+.inputDate{
+    position: absolute;
+    right: 30px;
+    top: 0;
+    padding: 18px 16px 12px 16px;
+    font-size: 12px;
+    font-style: italic;
+    color: blue;
+}
+
+fieldset {
+    border: 0;
+    margin-left: 300px;
+}
+label {
+    display: block;
+    margin: 20px 0 0 0;
+}
+#typeList{
+    float: left;
+}
+.viewBtn{
+    float: left;
+    margin-left: 10px;
+    width: 200px;
+    height: 33px;
+    margin-top: 16px;
+    border-radius: 4px;
+    font-size: 15px;
+    background: lightgrey;
+    color: black;
+    display: inline-block;
+    text-align: center;
+}
+.viewBtn span{
+    display: block;
+    margin-top: 6px;
+}
+
+.viewBtn:hover{
+    filter: brightness(80%);
+}
+#viewCheck input{
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.modal{
+    display: none;
+}
+.modalView{
+    display: block;
+}
+
+
+
+
+
+
+
+
