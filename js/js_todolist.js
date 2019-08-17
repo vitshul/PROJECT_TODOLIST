@@ -46,7 +46,9 @@ function leftDate(dateNow,dateFinish) {
     if(Minutes>0) return (Days + " min");
 
     let Seconds =  diffDate(dateNow, dateFinish, "seconds")
-    if(Seconds>0) return (Days + " sec");
+    if(Seconds>0) return (Days + " sec")
+    else return "time is up";
+
 }
 
 class todo  {
@@ -64,12 +66,13 @@ class todo  {
     }
 
     setCheck (){
-        if(this.check==false){
+/*        if(this.check==false){
             this.check=true;
         } else
         {
             this.check=false;
-        }
+        }*/
+        this.check=!this.check;
     }
 }
 
@@ -133,7 +136,6 @@ function view(list) {
         var span2 = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
         span2.className = "close";
-     //   span2.onclick = ;
         span2.appendChild(txt);
         li.appendChild(span1);
         li.appendChild(span2);
@@ -141,31 +143,12 @@ function view(list) {
     });
 }
 function changeFlag() {
- //   let checkBox = document.getElementById('checkbox');
- //   let arh = document.getElementById('list');
-
     // установим в меню поле архив
-   // var sel = document.getElementById('list').options[0].selected;
-    var sel = document.getElementById('list');
-
-    if(flagCheck==false) {
-        flagCheck = true;
-/*        if(sel[0].selected==true){
-            sel[1].selected=true;
-        }*/
-    }else {
-        flagCheck=false;
-/*        if(sel[2].selected==true){
-            sel[0].selected=true;
-        }*/
-    }
+    flagCheck = !flagCheck;
     viewList();
 }
 
 function viewList() {
-  //  var select = document.querySelector('select').querySelectorAll('option');
-//    document.getElementById('chbx').disabled = true;
-
 
     var select = document.querySelector('select');
     var indexSelected = select.selectedIndex;
@@ -174,11 +157,6 @@ function viewList() {
         //все задачи
         case '1':
             let mylist0=myNodelist;
-/*            if (flagCheck ==true){
-                mylist0 = myNodelist.filter(function (item) {
-                    return item.check==false;
-                });
-            }*/
             document.getElementById('checkbox').checked = false;
             document.getElementById('checkbox').disabled = true;
             view(mylist0);

@@ -14,7 +14,7 @@ ul {
     float: left;
     margin: 0;
     padding: 0;
-    width: 500px;
+    width: 50%;
 }
 
 .score{
@@ -56,17 +56,17 @@ ul {
 ul li {
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 40px;
+    padding: 12px 90px 12px 40px;
     background: #eee;
     font-size: 18px;
     transition: 0.2s;
     border: solid 1px mediumblue;
-
     /* make the list items unselectable */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
@@ -193,6 +193,10 @@ input {
     font-size: 12px;
     font-style: italic;
     color: blue;
+}
+
+.inputDateRed{
+    color: red;
 }
 
 fieldset {
